@@ -14,16 +14,18 @@ public class Webshop {
         ProductCategory tampons = new ProductCategory("Tampon", "Pipere", "Tamponok for our dear ladies");
         FeaturedProductCategory featuredPC = new FeaturedProductCategory();
         featuredPC.schedule(start, end);
+
         Supplier supplier1 = new Supplier("Adidas", "Cipőgyáros");
 
         Product prod1 = new Product("termék1", 200, usd, tampons, supplier1);
         prod1.setSupplier(supplier1);
-        prod1.getAllProductsBy(tampons);
+
         Product prod2 = new Product("termék2", 100, usd, tampons, supplier1);
         prod2.setProductCategory(tampons);
         Product prod3 = new Product();
 
         System.out.println(featuredPC);
+        System.out.println("supp.getProd: " + supplier1.getProducts());
         System.out.println("get all by prodcat1: " + prod1.getAllProductsBy(tampons));
         System.out.println("all supp: " + prod2.getAllProductsBy(supplier1));
 

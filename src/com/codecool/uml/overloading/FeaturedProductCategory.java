@@ -8,6 +8,7 @@ public class FeaturedProductCategory extends ProductCategory {
 
     public void schedule(Date startDate, Date endDate) {
         this.startDate = startDate;
+        this.endDate = endDate;
     }
 
     @Override

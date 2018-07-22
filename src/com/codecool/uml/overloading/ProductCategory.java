@@ -10,7 +10,11 @@ public class ProductCategory {
     private String description;
 
     public ProductCategory(){}
-    public ProductCategory(String name, String department, String description){}
+    public ProductCategory(String name, String department, String description){
+        this.name = name;
+        this.department = department;
+        this.description = description;
+    }
 
     public String getName() {
         return name;
@@ -37,8 +41,7 @@ public class ProductCategory {
     }
 
     public List<Product> getProducts() {
-        ArrayList<Product> arr = new ArrayList<>();
-        return arr;
+        return Product.getAllProductsBy(this);
     }
 
     @Override

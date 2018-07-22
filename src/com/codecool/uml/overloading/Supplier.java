@@ -1,5 +1,6 @@
 package com.codecool.uml.overloading;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Supplier {
@@ -9,7 +10,10 @@ public class Supplier {
 
     public Supplier() {}
 
-    public Supplier(String name, String description) {};
+    public Supplier(String name, String description) {
+        this.name = name;
+        this.description = description;
+    };
 
     public int getId() {
         return id;
@@ -31,14 +35,16 @@ public class Supplier {
         this.description = description;
     }
 
-/*    public List<Product> getProducts () {
-
-        return list;
-    }*/
+    List<Product> getProducts () {
+        //Product prod = new Product();
+        //return prod.getAllProductsBy(this);
+        return Product.getAllProductsBy(this);
+    }
 
     @Override
     public String toString() {
-        return "A";
+        String listString = new String();
+        listString = this.getClass() + ":id:" + ",name:"+ this.getName() + "," + this.description;
+        return listString;
     }
-
 }

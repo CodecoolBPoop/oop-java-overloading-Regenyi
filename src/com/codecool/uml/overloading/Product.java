@@ -14,7 +14,7 @@ public class Product {
 
     Currency currency = Currency.getInstance(Locale.US);
 
-    public Product() {
+    Product() {
         ProductCategory tempPC = new ProductCategory();
         Supplier tempSupp = new Supplier();
         this.name = "n/a";
@@ -82,8 +82,8 @@ public class Product {
         return supplier;
     }
 
-    //todo: q: can't the parameter be converted to 'object', and do pc and supp in one batch?
-    public List<Product> getAllProductsBy(ProductCategory productCategory) {
+    //todo: q: can't the parameter be converted to 'object', and do pc and supp in one batch? why static?
+    public static List<Product> getAllProductsBy(ProductCategory productCategory) {
         List<Product> tempList = new ArrayList<>();
         for (int i = 0; i < productList.size(); i++) {
             if (productList.get(i).getProductCategory().equals(productCategory)) {
@@ -93,7 +93,7 @@ public class Product {
         return tempList;
     }
 
-    public List<Product> getAllProductsBy(Supplier supplier) {
+    public static List<Product> getAllProductsBy(Supplier supplier) {
         List<Product> tempList = new ArrayList<>();
         for (Product prod : productList) {
             if (prod.getSupplier().equals(supplier)) {
